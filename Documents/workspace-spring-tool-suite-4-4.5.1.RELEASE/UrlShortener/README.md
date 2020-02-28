@@ -42,3 +42,9 @@ success response:
 "shortLink": ""http://localhost:8080/tiny/c"
 }
 
+# Approach:
+1. Used division and modulo operation to convert a url which can have 62 characters - [A-Z, a-z, 0-9].
+2. Created database table using both H2 DB and MySql which will have a unique key generator for each row. This Id is used for encoding using logic #1.
+3. Table has 3 cloumns - Id, Original url and shorterned Url.
+4. Used Spring Boot to create Rest APIs.
+5. In the service layer, the program accepts original url and then shortens the url and vice-versa. For this a short key is generated using Id from DB.
